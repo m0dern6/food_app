@@ -15,15 +15,15 @@ class _SignUpState extends State<SignUp> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 36),
         child: Container(
-          color: Color(0xffFFFFFF),
+          color: const Color(0xffFFFFFF),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset('assets/logo.png'),
-              Padding(
-                padding: const EdgeInsets.only(top: 20, bottom: 20),
-                child: const Text('Sign up',
+              const Padding(
+                padding: EdgeInsets.only(top: 20, bottom: 20),
+                child: Text('Sign up',
                     style:
                         TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               ),
@@ -51,9 +51,8 @@ class _SignUpState extends State<SignUp> {
                 padding: const EdgeInsets.only(top: 36, bottom: 12),
                 child: ElevatedButton(
                     style: ButtonStyle(
-                      minimumSize:
-                          MaterialStateProperty.all(const Size(305, 43)),
-                      backgroundColor: MaterialStateProperty.all(buttonColor),
+                      minimumSize: WidgetStateProperty.all(const Size(305, 43)),
+                      backgroundColor: WidgetStateProperty.all(buttonColor),
                     ),
                     onPressed: () {
                       Navigator.pushReplacementNamed(context, 'profile');
@@ -71,10 +70,10 @@ class _SignUpState extends State<SignUp> {
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.grey[300]!),
                         borderRadius: BorderRadius.circular(25)),
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Icon(Icons.facebook),
+                        Image.asset('assets/icons/google.png'),
                         Text(
                           'Google',
                           style: TextStyle(
@@ -83,17 +82,17 @@ class _SignUpState extends State<SignUp> {
                       ],
                     ),
                   ),
-                  Spacer(),
+                  SizedBox(width: 10),
                   Container(
                     width: 146,
                     height: 40,
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.grey[300]!),
                         borderRadius: BorderRadius.circular(25)),
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Icon(Icons.facebook),
+                        Image.asset('assets/icons/facebook.png'),
                         Text(
                           'Facebook',
                           style: TextStyle(
